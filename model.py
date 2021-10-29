@@ -15,6 +15,10 @@ from tensorflow.keras.layers import Activation
 from tensorflow.keras.layers import Concatenate
 from keras_contrib.layers.normalization.instancenormalization import InstanceNormalization
 from matplotlib import pyplot
+
+import tensorflow
+
+print("Num GPUs Available: ", len(tensorflow.config.list_physical_devices('GPU')))
  
 # define the discriminator model
 def define_discriminator(image_shape):

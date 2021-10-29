@@ -4,7 +4,7 @@ from numpy import vstack
 from keras.preprocessing.image import img_to_array
 from keras.preprocessing.image import load_img
 from numpy import savez_compressed
- 
+
 
 def load_images(path, size=(256,256)):
     data_list = list()
