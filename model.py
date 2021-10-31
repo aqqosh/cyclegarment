@@ -220,7 +220,7 @@ def update_image_pool(pool, images, max_size=50):
 # train cyclegan models
 def train(d_model_A, d_model_B, g_model_AtoB, g_model_BtoA, c_model_AtoB, c_model_BtoA, dataset):
     # define properties of the training run
-    n_epochs, n_batch, = 100, 1
+    n_epochs, n_batch, = 1000, 1
     # determine the output square shape of the discriminator
     n_patch = d_model_A.output_shape[1]
     # unpack dataset
@@ -260,7 +260,7 @@ def train(d_model_A, d_model_B, g_model_AtoB, g_model_BtoA, c_model_AtoB, c_mode
         summarize_performance(i, g_model_AtoB, trainA, 'AtoB')
         # plot B->A translation
         summarize_performance(i, g_model_BtoA, trainB, 'BtoA')
-        if (i+1) % (bat_per_epo * 5) == 0:
+        if (i+1) % (bat_per_epo * 50) == 0:
             # save the models
             save_models(i, g_model_AtoB, g_model_BtoA)
 
